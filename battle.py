@@ -57,11 +57,12 @@ def enemy_attack(is_blocked):
 
 def start():
     print("This is the battle system")
-    while enemy.hp > 0 or player.hp > 0:
+    while enemy.hp > 0:
         enemy_attack(attack())
-    if enemy.hp <= 0:
-        print("The enemy died")
-        print(f"player HP - {player.hp}")
-    elif player.hp <= 0:
-        print("You died!")
+        if player.hp <= 0:
+            print("You died!")
+            break
+        if enemy.hp <= 0:
+            print("Enemy died")
+
     input("Press Enter to return to the Main Menu")
